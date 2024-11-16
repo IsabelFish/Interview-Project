@@ -9,7 +9,7 @@
     #writing-right {
         position: relative!important;
         margin: auto!important;
-        padding: 90px 0 90px 0!important;
+        padding: 90px 0 0 0!important;
         max-width: 650px!important;
         width: auto!important;
     }
@@ -19,21 +19,29 @@
     }
 }
 
+:root {
+    --main-color: blue; 
+    --secondary-color: fuchsia;
+    --white-maybe: white;
+}
+
 * {
     box-sizing: border-box;
-    color: blue;
+    color: var(--main-color);
 }
 
 body {
     margin: 0; 
     padding: 0;
-    background-color: whtie;
+    background-color: var(--white-maybe);
     cursor: default;
+
+    overflow-x: hidden;
 }
 
 ::selection {
     background: yellow;
-    color: blue;
+    color: var(--main-color);
 
 }
 
@@ -45,9 +53,9 @@ body {
     z-index: 999;
 
     border: none;
-    outline: 2px solid white;
-    background-color: blue; 
-    color: white;
+    outline: 2px solid var(--white-maybe);
+    background-color: var(--main-color); 
+    color: var(--white-maybe);
 
     cursor: pointer; 
     padding: 15px; 
@@ -55,7 +63,7 @@ body {
   }
   
 #myBtn:hover {
-    background-color: fuchsia;
+    background-color: var(--secondary-color);
 }
 
 #title-left {
@@ -67,12 +75,12 @@ body {
 
     height: 100vh;
     width: 40vw;
-    background-color: blue;
-    border-right: 2px solid blue;
-    box-shadow: 5px 0px 30px blue;
+    background-color: var(--main-color);
+    border-right: 2px solid var(--main-color);
+    box-shadow: 5px 0px 30px var(--main-color);
     padding: 90px;
 
-    overflow: scroll;
+    overflow: hidden;
 }
 
 #title-gifs {
@@ -89,7 +97,7 @@ body {
 }
 
 #title {
-    color: white;
+    color: var(--white-maybe);
     font-family: "lores-22-serif", sans-serif;
     font-weight: 700;
     font-style: normal;
@@ -98,19 +106,21 @@ body {
 }
 
 #sub-title {
-    color: white!important;
+    color: var(--white-maybe)!important;
     font-family: "lores-22-serif", sans-serif;
     font-weight: 700;
     font-style: normal;
+    font-size: 25px;
     
 }
 
 #desc {
-    max-width: 450px;
+    max-width: 330px;
     margin: auto;
     border-radius: 50px;
     padding: 30px;
-    color: white;
+    padding-bottom: 20px;
+    color: var(--white-maybe);
     justify-content: center;
 
     font-family: sans-serif;
@@ -118,23 +128,26 @@ body {
 }
 
 a {
-    color: blue;
     text-decoration: none;
-    background: white;
+}
+
+.link-web {
+    color: var(--main-color);
+    text-decoration: none;
+    background: var(--white-maybe);
+    font-family: sans-serif; 
 
     padding: 2px 6px;
-    margin-top: 100px;
     border-radius: 10px;
 }
 
-a:hover {
-    background-color: fuchsia;
+.link-web:hover {
+    background-color: var(--secondary-color);
 }
 
-
 .img-star {
-    color: white!important;
-    background-color: blue;
+    color: var(--white-maybe)!important;
+    background-color: var(--main-color);
     border-radius: 100vw;
 
     width: 20px;
@@ -147,16 +160,73 @@ a:hover {
 }
 
 .img-star:hover {
-    background-color: fuchsia;
+    background-color: var(--secondary-color);
 }
-
 
 div.img-center .img-star {
     margin: 20px 10px 0px 1px;
-    
 }
 
+/*img section*/
 
+.img-box {
+    color: var(--white-maybe)!important;
+    background-color: var(--main-color);
+    box-shadow: 0px 0px 30px var(--main-color);
+    border-radius: 20px;
+    padding: 10px;
+
+    width: 100%;
+    height: 460px;
+    text-align: center;
+    margin: 30px 0 0px 0;
+
+    position: static;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.img-type {
+    color: var(--white-maybe);
+    margin-top: -15px;
+    width: 100%;
+    display: flex; 
+    justify-content: space-between;
+    font-size: 0.8rem;
+}
+
+.img-type-left {
+    color: var(--white-maybe);
+    text-align: left;
+}
+
+.img-type-right {
+    color: var(--white-maybe);
+    text-align: right
+}
+
+.img-size {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/*
+.first-letter {
+    font-family: "lores-22-serif", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 35px;
+}
+/*
+.first-letter-a {
+    font-family: "lores-22-serif", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 35px;
+}
+*/
+
+/* questions! */
 
 #writing-right {
     margin-left: 40vw;
@@ -165,7 +235,7 @@ div.img-center .img-star {
     line-height: 22px;
 
     width: 60vw;
-    padding: 90px;
+    padding: 90px 90px 0 90px;
 
     display: flex;
     justify-content: center;
@@ -186,12 +256,13 @@ div.img-center .img-star {
   }
 
 .question {
-    margin-right: 35%;
+    margin-right: 36%;
+    font-weight: bold;
 }
   
 .answer {
     padding-top: 20px;
-    margin-left: 30%;
+    margin-left: 29%;
   }
 
 .brat {
@@ -215,38 +286,38 @@ div.img-center .img-star {
     width: 100%;
     margin: 10px;
 
-    background-color: blue;
+    background-color: var(--main-color);
     border-radius: 50px;
 }
 
 .footer-text {
-    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 45px;
 
-    color: white;
+    background-color: var(--main-color);
+    border-radius: 50px;
+
+    position: static;
+
+    color: var(--white-maybe);
     text-align: center;
+    padding: 15px;
+
+    font-family: "lores-22-serif", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 25px;
 }
 
-/* collapsible */ 
+.footersp {
+    color: var(--white-maybe); 
+}
 
-.collapsible {
-    background-color: #777;
-    color: white;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-  }
-  
-  .active, .collapsible:hover {
-    background-color: #555;
-  }
-  
-  .content {
-    padding: 0 18px;
-    display: none;
-    overflow: hidden;
-    background-color: #f1f1f1;
+#me-link {
+    color: var(--white-maybe); 
+}
+
+#me-link:hover {
+    color: var(--secondary-color); 
 }
