@@ -284,7 +284,7 @@ div.img-center .img-star {
 #footer-div {
     height: 50px;
     width: 100%;
-    margin: 10px;
+    margin: 10px 0;
 
     background-color: var(--main-color);
     border-radius: 50px;
